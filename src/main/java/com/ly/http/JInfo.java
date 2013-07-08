@@ -1,5 +1,7 @@
 package com.ly.http;
 
+import java.util.Map;
+
 import ivy.basic.ViException;
 import ivy.json.Json;
 
@@ -15,9 +17,11 @@ public class JInfo<T> {
 	public static final int FAULTSTATE = -1;
 	public static final int UNINITIALIZED = 0;
 	public static final int SESSIONOUT = 2;
-
+	public static final int VALIDATIONFAILURE = -2;
 	private int infocode = SUCCESSSTATE;
+
 	private String infomessage = "";
+	private Map<String, String> vfms;
 	private T data;
 
 	public int getInfocode() {
@@ -151,6 +155,14 @@ public class JInfo<T> {
 			er = e.getMessage();
 		}
 		return er;
+	}
+
+	public Map<String, String> getVfms() {
+		return vfms;
+	}
+
+	public void setVfms(Map<String, String> vfms) {
+		this.vfms = vfms;
 	}
 
 }
