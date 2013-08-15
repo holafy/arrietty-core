@@ -13,6 +13,7 @@ import ivy.json.Json;
  * @param <T>
  */
 public class JInfo<T> {
+	
 	public static final int SUCCESSSTATE = 1;
 	public static final int FAULTSTATE = -1;
 	public static final int UNINITIALIZED = 0;
